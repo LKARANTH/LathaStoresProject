@@ -21,7 +21,7 @@ class Product
 
         #region Properties
         ///Type of the Product
-        public string TypeOfProduct { get; set; }
+        public ProductType TypeOfProduct { get; set; }
         ///ID for the Product
         public int ProductID { get; }
         ///Name of the Product

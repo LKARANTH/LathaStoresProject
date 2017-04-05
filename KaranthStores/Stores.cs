@@ -13,7 +13,7 @@ namespace KaranthStores
             var product = new Product
             {
                 ProductName = productName,
-                TypeOfProduct = typeOfProduct,
+                TypeOfProduct = typeOfProduct
             };
             product.Receive(quantity);
             return product;
