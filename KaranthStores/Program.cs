@@ -16,8 +16,9 @@ namespace KaranthStores
             Console.WriteLine("1: Please place an order");
             Console.WriteLine("2: sold");
             Console.WriteLine("3: received");
+            Console.WriteLine("4: Print all Products");
             var option = Console.ReadLine();
-            var product1 = new Product();
+            var product = new Product();
             switch (option)
             {
                 case "0":
@@ -26,24 +27,26 @@ namespace KaranthStores
                 case "1":
                     Console.WriteLine(" Enter Manufacturer Name");
                     var Manufacturer = Console.ReadLine();
-                    product1.Manufacturer = Manufacturer;
+                    product.Manufacturer = Manufacturer;
                     Console.WriteLine(" Enter Product Name");
                     var ProductName = Console.ReadLine();
-                    product1.ProductName = ProductName;
+                    product.ProductName = ProductName;
                     Console.WriteLine(" Enter Type Of Product");
                     var TypeOfProduct = Console.ReadLine();
-                    product1.TypeOfProduct = TypeOfProduct;
+                    product.TypeOfProduct = TypeOfProduct;
                     Console.WriteLine(" Enter the Quantity");
                     int Quantity = Convert.ToInt32 (Console.ReadLine());
-                    product1.Quantity = Quantity;
-                    Console.WriteLine($"Manufacturer: {product1.Manufacturer}, ProductName: {product1.ProductName}, TypeOfProduct: {product1.TypeOfProduct}, Quantity: {product1.Quantity}");
-
-                    break;
+                    product.Quantity = Quantity;
+                    Console.WriteLine($"Manufacturer: {product.Manufacturer}, ProductName: {product.ProductName}, TypeOfProduct: {product.TypeOfProduct}, Quantity: {product.Quantity}");
+                break;
                 case "2":
-                    product1.Sales(10);
-                    break;
                 case "3":
-                    product1.Receive(10);
+                case "4":
+                    var products = Stores.GetAllProducts();
+                    foreach (var product in products) 
+                    {
+                        Console.WriteLine($"Manufacturer: {product.Manufacturer}, ProductName: {product.ProductName}, TypeOfProduct: {product.TypeOfProduct}, Quantity: {product.Quantity}");
+                    }
                     break;
                 default:
                     break;

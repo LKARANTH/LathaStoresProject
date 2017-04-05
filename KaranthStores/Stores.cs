@@ -8,6 +8,7 @@ namespace KaranthStores
 {
     static class Stores
     {
+        private static List<Product> products = new List<Product>();
         public static Product PlaceOrder(string productName, ProductType typeOfProduct, int quantity)
         {
             var product = new Product
@@ -17,6 +18,10 @@ namespace KaranthStores
             };
             product.Receive(quantity);
             return product;
+        }
+            public static List<Product> GetAllProducts()
+        {
+            return products;
         }
     }
 }
