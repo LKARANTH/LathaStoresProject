@@ -16,12 +16,15 @@ namespace KaranthStores
                 ProductName = productName,
                 TypeOfProduct = typeOfProduct
             };
+            products.Add(product);
             product.Receive(quantity);
             return product;
         }
-            public static List<Product> GetAllProducts()
+        public static List<Product> GetAllProducts()
         {
             return products;
+
         }
     }
-}
+    }
+
